@@ -62,8 +62,8 @@ const App = () => {
   <BrowserRouter>
     <div className="container">
     <Header />
-      <Route patch="/" exact render={() => (
-          <>
+    <Route component = { () => (
+      <>
            <AddTask handleTaskAddition={handleTaskAddition} />
              <Tasks 
                tasks={tasks}  
@@ -71,8 +71,7 @@ const App = () => {
                handleTaskDeletion={handleTaskDeletion}
              />
           </>
-        )}
-      />
+    )}  path="/" exact />
       <Route path="/:taskTitle" exact component={TaskDetails}/>
     </div>;
   </BrowserRouter>
